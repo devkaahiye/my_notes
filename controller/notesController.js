@@ -27,7 +27,7 @@ export const createNote = async (req, res) => {
     const { title, date, description } = req.body;
     const newNote = new Notes({
       title,
-      date,
+      date:new  Date(date),
       description,
     });
     const note = await newNote.save();
@@ -44,7 +44,7 @@ export const updateNote = async(req, res)=>{
         const note = await Notes.findById(req.params.id);
         if (note) {
             note.title=title;
-            note.date=date;
+            note.date= new  Date(date),
             note.description= description
 
             const updatedNote = await note.save()
