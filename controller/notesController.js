@@ -24,10 +24,10 @@ export const getNoteById = async (req, res) => {
 export const createNote = async (req, res) => {
   try {
 
-    const { title, date, description } = req.body;
+    const { title, description, dateTime } = req.body;
     const newNote = new Notes({
       title,
-      date:new  Date(date),
+      dateTime:  Date(dateTime),
       description,
     });
     const note = await newNote.save();

@@ -5,7 +5,7 @@ const notesSchema = mongoose.Schema({
         type:String,
         required:true
     },
-    date:{
+    dateTime:{
         type:Date,
         required:true
     },
