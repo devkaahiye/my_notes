@@ -26,9 +26,9 @@ export const createNote = async (req, res) => {
 
     const { title, description, dateTime } = req.body;
     const newNote = new Notes({
-      title,
+      title:title,
       dateTime:  Date(dateTime),
-      description,
+      description:description,
     });
     const note = await newNote.save();
     res.status(200).json(note);
