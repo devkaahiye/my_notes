@@ -31,7 +31,7 @@ export const createNote = async (req, res) => {
       description:description,
     });
     const note = await newNote.save();
-    res.status(200).json(note);
+    res.status(201).json(note);
 
   } catch (error) {
     res.status(500).json({ error: error.message });
